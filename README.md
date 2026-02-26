@@ -27,7 +27,7 @@
 - [x] 引入ccache缓存及大量独家编译流程优化，二次编译时间可稳定在约6min (注：首次使用ccache由于需要创建缓存速度会比较慢，约22min，从第二次开始ccache才会生效加速编译，加速后单次编译时间约6min(更改内核编译选项会导致include/generated/autoconf.h改变，且绝大部分源码编译时会间接引用这个头文件，故会导致二次编译速度有所下降，下降至约10分钟，若再次使用首次缓存时的配置可恢复至约6分钟，如需要长期修改配置选项建议清空ccache缓存再用新的配置重建缓存)；由于现在GitHub Action的机制，距离上一次创建缓存较长时间后缓存可能会被自动清除，此时编译会自动重建缓存)
 - [x] 引入O2编译优化，改善内核运行性能
 - [x] ~~可选manual/kprobes/syscall钩子模式(kprobes钩子模式下支持切换至sus su模式)~~ 由于最新版KSU已更新inline hook，故旧版manual/syscall钩子已作废
-- [x] lz4 1.10.0 & zstd 1.5.7 算法更新&优化补丁(来自[@ferstar](https://github.com/ferstar), 移植by [@Xiaomichael](https://github.com/Xiaomichael), 6.6版本补丁重制by [@cctv18](https://github.com/cctv18))
+- [x] lz4 1.10.0 & zstd 1.5.7 算法更新&优化补丁(来自[@ferstar](https://github.com/ferstar), 移植by [@Xiaomichael](https://github.com/Xiaomichael), 6.6版本补丁重制by [@t.me/yuriservice](https://github.com/cctv18))
 - [x] 可选加入 BBR/Brutal 及一系列 tcp 拥塞控制算法
 - [x] [ADIOS IO调度器](https://github.com/firelzrd/adios)移植
 - [x] 加入一些网络连接性能优化配置选项（用于为ipset及需要iptables等高级网络功能内核支持的程序提供支持）
